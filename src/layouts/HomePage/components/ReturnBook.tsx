@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import BookModel from '../../../../models/BookModel';
-import bookImage from '../../../../Images/BooksImages/book-luv2code-1000.png';
+import bookImage from './../../../Images/BooksImages/book-luv2code-1000.png';
+import BookModel from '../../../models/BookModel';
 
 
 export const ReturnBook: React.FC<{book: BookModel}> = (props) => {

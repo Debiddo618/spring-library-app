@@ -1,8 +1,8 @@
 import './App.css'
-import { Carousel } from './layouts/NavbarAndFooter/HomePage/components/Carousel'
-import { ExploreTopBooks } from './layouts/NavbarAndFooter/HomePage/components/ExploreTopBooks'
-import { Heros } from './layouts/NavbarAndFooter/HomePage/components/Heros'
-import { LibraryServices } from './layouts/NavbarAndFooter/HomePage/components/LibraryServices'
+import { HomePage } from './layouts/HomePage/HomePage'
+
+import { Footer } from './layouts/NavbarAndFooter/Footer'
+
 import { Navbar } from './layouts/NavbarAndFooter/Navbar'
 
 function App() {
@@ -10,10 +10,8 @@ function App() {
   return (
     <>
       <Navbar/>
-      <ExploreTopBooks/>
-      <Carousel/>
-      <Heros/>
-      <LibraryServices/>
+      <HomePage/>
+      <Footer/>
     </>
   )
 }
