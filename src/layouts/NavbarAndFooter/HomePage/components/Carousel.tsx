@@ -1,12 +1,12 @@
-// import { ReturnBook } from "./ReturnBook";
+import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
-// import BookModel from "../../../models/BookModel";
 // import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
+import BookModel from "../../../../models/BookModel";
 
 export const Carousel = () => {
 
-    // const [books, setBooks] = useState<BookModel[]>([]);
+    const [books, setBooks] = useState<BookModel[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState(null);
 
@@ -76,23 +76,23 @@ export const Carousel = () => {
                 <div className='carousel-inner'>
                     <div className='carousel-item active'>
                         <div className='row d-flex justify-content-center align-items-center'>
-                            {/* {books.slice(0, 3).map(book => (
+                            {books.slice(0, 3).map(book => (
                                 <ReturnBook book={book} key ={book.id} />
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                     <div className='carousel-item'>
                         <div className='row d-flex justify-content-center align-items-center'>
-                            {/* {books.slice(3, 6).map(book => (
+                            {books.slice(3, 6).map(book => (
                                 <ReturnBook book={book} key ={book.id} />
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                     <div className='carousel-item'>
                         <div className='row d-flex justify-content-center align-items-center'>
-                            {/* {books.slice(6, 9).map(book => (
+                            {books.slice(6, 9).map(book => (
                                 <ReturnBook book={book} key ={book.id} />
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 </div>
