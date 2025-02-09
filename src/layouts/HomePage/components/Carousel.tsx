@@ -1,8 +1,8 @@
 import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
-// import { SpinnerLoading } from "../../Utils/SpinnerLoading";
+import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
-import BookModel from "../../../../models/BookModel";
+import BookModel from "../../../models/BookModel";
 
 export const Carousel = () => {
 
@@ -26,22 +26,22 @@ export const Carousel = () => {
 
             const responseData = responseJson._embedded.books;
 
-            // const loadedBooks: BookModel[] = [];
+            const loadedBooks: BookModel[] = [];
 
-            // for (const key in responseData) {
-            //     loadedBooks.push({
-            //         id: responseData[key].id,
-            //         title: responseData[key].title,
-            //         author: responseData[key].author,
-            //         description: responseData[key].description,
-            //         copies: responseData[key].copies,
-            //         copiesAvailable: responseData[key].copiesAvailable,
-            //         category: responseData[key].category,
-            //         img: responseData[key].img,
-            //     });
-            // }
+            for (const key in responseData) {
+                loadedBooks.push({
+                    id: responseData[key].id,
+                    title: responseData[key].title,
+                    author: responseData[key].author,
+                    description: responseData[key].description,
+                    copies: responseData[key].copies,
+                    copiesAvailable: responseData[key].copiesAvailable,
+                    category: responseData[key].category,
+                    img: responseData[key].img,
+                });
+            }
 
-            // setBooks(loadedBooks);
+            setBooks(loadedBooks);
             setIsLoading(false);
         };
         fetchBooks().catch((error: any) => {
@@ -50,11 +50,11 @@ export const Carousel = () => {
         })
     }, []);
 
-    // if (isLoading) {
-    //     return (
-    //         <SpinnerLoading/>
-    //     )
-    // }
+    if (isLoading) {
+        return (
+            <SpinnerLoading/>
+        )
+    }
 
     if (httpError) {
         return (
@@ -111,7 +111,7 @@ export const Carousel = () => {
             {/* Mobile */}
             <div className='d-lg-none mt-3'>
                 <div className='row d-flex justify-content-center align-items-center'>
-                    {/* <ReturnBook book={books[7]} key={books[7].id}/> */}
+                    <ReturnBook book={books[7]} key={books[7].id}/>
                 </div>
             </div>
             <div className='homepage-carousel-title mt-3'>
