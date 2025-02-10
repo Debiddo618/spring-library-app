@@ -6,6 +6,7 @@ import { Footer } from "./layouts/NavbarAndFooter/Footer";
 
 import { Navbar } from "./layouts/NavbarAndFooter/Navbar";
 import { SearchBooksPage } from "./layouts/SearchBooksPage/SearchBooksPage";
+import { BookCheckoutPage } from "./layouts/BookCheckoutPage/BookCheckoutPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchBooksPage />} />
+          <Route path="/checkout/:bookId" element={<BookCheckoutPage />} />
         </Routes>
       </div>
       <Footer />
